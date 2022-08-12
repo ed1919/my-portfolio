@@ -1,14 +1,15 @@
-import { FC, useState, useEffect } from "react";
-import Header from "layout/header";
 import About from "components/about";
+import MainLayout from "layout/MainLayout";
+import { FC } from "react";
 
 interface IDemoPagesProps {}
 
 const DemoPages: FC<IDemoPagesProps> = ({}) => {
   return (
     <div className="demoPages">
-      <Header />
-      <About />
+      <MainLayout>
+        <About />
+      </MainLayout>
     </div>
   );
 };

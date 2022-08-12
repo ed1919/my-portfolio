@@ -1,20 +1,19 @@
-import { FC, useState, useEffect } from "react";
+import { FC, useState } from "react";
 import {
- AppBar,
- Box,
- Divider,
- Drawer,
- IconButton,
- List,
- ListItem,
- ListItemButton,
- ListItemText,
- Typography,
- Button,
- Toolbar,
+  AppBar,
+  Box,
+  Divider,
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Typography,
+  Button,
+  Toolbar,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import styles from "./Header.module.scss";
 
 interface IHeaderProps {
   window?: () => Window;
@@ -24,16 +23,21 @@ const Header: FC<IHeaderProps> = ({ window }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const drawerWidth = 240;
-  const navItems = ["Home", "About", "Contact"];
+  // const navItems = ["About", "My Projects", "Contact"];
+  const navItems = ["Button1", "Button2", "Button3"];
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
 
+  // TODO: add handleClick Top Left Label
+
+  // TODO: add handleClick Right Buttons
+
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        Label Text1
       </Typography>
       <Divider />
       <List>
@@ -53,6 +57,7 @@ const Header: FC<IHeaderProps> = ({ window }) => {
 
   return (
     <Box sx={{ display: "flex" }}>
+      {/* Header Bar */}
       <AppBar component="nav">
         <Toolbar>
           <IconButton
@@ -69,7 +74,7 @@ const Header: FC<IHeaderProps> = ({ window }) => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
           >
-            MUI
+            Label Text1
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
@@ -80,7 +85,10 @@ const Header: FC<IHeaderProps> = ({ window }) => {
           </Box>
         </Toolbar>
       </AppBar>
+
       <Toolbar />
+
+      {/* Drawer */}
       <Box component="nav">
         <Drawer
           container={container}
