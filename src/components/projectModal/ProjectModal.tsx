@@ -1,11 +1,14 @@
 import { FC } from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, IconButton, Button } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import SharedModal from "components/_shared/sharedModal";
 import { IProjectProps } from "components/project/Project";
 import SharedImage from "components/_shared/sharedImage";
 import { getTechniquesLabel } from "utils";
 import TechniquesLabel from "components/techniquesLabel";
+import IconClose from "@mui/icons-material/Close";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import THEME from "theme";
 
 interface IProjectModalProps {
   project: IProjectProps;
@@ -14,16 +17,35 @@ interface IProjectModalProps {
 
 const imgStyle = {
   width: "100%",
-  height: "50%",
+  height: 200,
   objectFit: "contain",
-  paddingBottom: 24,
+  padding: "24px 0px",
 };
 
 const ProjectModal: FC<IProjectModalProps> = ({ modalRef, project }) => {
   const { imgUrl, title, description, labelKeys } = project || {};
+
+  const handleClose = () => {
+    modalRef.current.close();
+  };
+
+  const handleNavToUrl = (url: string) => {
+    alert("Nav to Url");
+  };
+
   return (
     <SharedModal ref={modalRef}>
       <ProjectModalBox>
+        <IconButton
+          sx={{
+            position: "absolute",
+            top: 0,
+            right: 0,
+          }}
+          onClick={handleClose}
+        >
+          <IconClose />
+        </IconButton>
         <SharedImage src={imgUrl} style={imgStyle} />
         <RowWrapperBox>
           <Typography variant="h4">{title}</Typography>
@@ -49,6 +71,16 @@ const ProjectModal: FC<IProjectModalProps> = ({ modalRef, project }) => {
             </TechniquesLabelsBox>
           </>
         </RowWrapperBox>
+        <ButtonsRowBox>
+          <NavToProjectBtn onClick={() => handleNavToUrl("fakeURL")}>
+            Nav to Project
+          </NavToProjectBtn>
+          <IconButtonsBox>
+            <IconButton onClick={() => handleNavToUrl("fakeURL")}>
+              <GitHubIcon />
+            </IconButton>
+          </IconButtonsBox>
+        </ButtonsRowBox>
       </ProjectModalBox>
     </SharedModal>
   );
@@ -65,7 +97,6 @@ const ProjectModalBox = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
-  alignItems: "center",
   minWidth: "60%",
   minHeight: "75%",
   padding: 24,
@@ -78,13 +109,30 @@ const RowWrapperBox = styled(Box)(({ theme }) => ({
   paddingBottom: theme.spacing(1),
 }));
 
-const DescriptionTypography = styled(Typography)(({ theme }) => ({
-  textAlign: "center",
-}));
+const DescriptionTypography = styled(Typography)(({ theme }) => ({}));
 
 const TechniquesLabelsBox = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "row",
   flexWrap: "wrap",
+  width: "100%",
+  gap: theme.spacing(1),
+}));
+
+const ButtonsRowBox = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "space-between",
+  width: "100%",
+}));
+
+const NavToProjectBtn = styled(Button)(({ theme }) => ({
+  borderRadius: theme.spacing(1),
+  backgroundColor: THEME.colors.green,
+}));
+
+const IconButtonsBox = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexDirection: "row",
   gap: theme.spacing(1),
 }));
