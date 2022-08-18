@@ -1,26 +1,38 @@
 import { FC } from "react";
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import ProjectLabel from "components/projectLabel";
-import { IProjectLabelProps } from "components/projectLabel/ProjectLabel";
+import TechniquesLabel from "components/techniquesLabel";
+import { Techniques } from "constants/Constants";
+
+import { getTechniquesLabel } from "utils";
 
 export interface IProjectProps {
   imgUrl: string;
   title: string;
   description: string;
-  labels: IProjectLabelProps[];
+  labelKeys: Techniques[];
 }
 
-const Project: FC<IProjectProps> = ({ imgUrl, title, description, labels }) => {
+const Project: FC<IProjectProps> = ({
+  imgUrl,
+  title,
+  description,
+  labelKeys,
+}) => {
+  console.log("labelKeys", labelKeys);
   return (
     <Container>
       <MainImage src={imgUrl} />
       <Title>{title}</Title>
       <Description>{description}</Description>
       <LabelsWrapper>
-        {labels.map((item) => (
-          <ProjectLabel {...item} />
-        ))}
+        {labelKeys &&
+          labelKeys.map((labelKey) => {
+            const labelDetails = getTechniquesLabel(labelKey);
+            return (
+              <TechniquesLabel key={labelDetails.label} {...labelDetails} />
+            );
+          })}
       </LabelsWrapper>
     </Container>
   );
@@ -29,17 +41,15 @@ const Project: FC<IProjectProps> = ({ imgUrl, title, description, labels }) => {
 export default Project;
 
 const Container = styled(Box)(({ theme }) => ({
-  flex: '0 0 24%',
-  flexGrow: 1,
   display: "flex",
   flexDirection: "column",
   gap: theme.spacing(1),
   padding: theme.spacing(1),
   border: "1px solid black",
   borderRadius: theme.shape.borderRadius,
-  '&:hover': {
+  "&:hover": {
     opacity: 0.5,
-    cursor: 'pointer',
+    cursor: "pointer",
   },
 }));
 
