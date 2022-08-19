@@ -3,27 +3,20 @@ import { Box, Typography, IconButton, Button } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import SharedModal from "components/_shared/sharedModal";
 import { IProjectProps } from "components/project/Project";
-import SharedImage from "components/_shared/sharedImage";
 import { getTechniquesLabel } from "utils";
 import TechniquesLabel from "components/techniquesLabel";
 import IconClose from "@mui/icons-material/Close";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import THEME from "theme";
+import DemoSwiper from "./demoSwiper";
 
 interface IProjectModalProps {
   project: IProjectProps;
   modalRef: any;
 }
 
-const imgStyle = {
-  width: "100%",
-  height: 200,
-  objectFit: "contain",
-  padding: "24px 0px",
-};
-
 const ProjectModal: FC<IProjectModalProps> = ({ modalRef, project }) => {
-  const { imgUrl, title, description, labelKeys } = project || {};
+  const { imgUrls, title, description, labelKeys } = project || {};
 
   const handleClose = () => {
     modalRef.current.close();
@@ -46,7 +39,9 @@ const ProjectModal: FC<IProjectModalProps> = ({ modalRef, project }) => {
         >
           <IconClose />
         </IconButton>
-        <SharedImage src={imgUrl} style={imgStyle} />
+        <RowWrapperBox>
+          <DemoSwiper imgUrls={imgUrls} />
+        </RowWrapperBox>
         <RowWrapperBox>
           <Typography variant="h4">{title}</Typography>
         </RowWrapperBox>
@@ -97,10 +92,9 @@ const ProjectModalBox = styled(Box)(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
-  minWidth: "60%",
+  width: "60%",
   minHeight: "75%",
   padding: 24,
-  border: "1px solid red",
   borderRadius: theme.shape.borderRadius,
   backgroundColor: "white",
 }));

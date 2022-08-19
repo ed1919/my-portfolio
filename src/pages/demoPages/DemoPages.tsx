@@ -6,7 +6,7 @@ import { FC } from "react";
 
 interface IDemoPagesProps {}
 
-const DemoPages: FC<IDemoPagesProps> = ({}) => {
+const DemoPages: FC<IDemoPagesProps> = () => {
   return (
     <div className="demoPages">
       <MainLayout>

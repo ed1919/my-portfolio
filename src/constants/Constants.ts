@@ -42,63 +42,63 @@ export const projectKeys = Object.keys(projectLabels) as Techniques[];
 
 export const projects: IProjectProps[] = [
   {
-    imgUrl: PROJECT_IMG_URL_1,
+    imgUrls: [PROJECT_IMG_URL_1, PROJECT_IMG_URL_1, HERO_IMG_URL],
     title: "Project 1",
     description:
       "Project 1 Desc: lfnesnjs enesk njfkesjnkj nfkjesnkjns ekj nfnsejk fnskjn nesjkn eskjn jknesjk",
     labelKeys: projectKeys,
   },
   {
-    imgUrl: PROJECT_IMG_URL_1,
+    imgUrls: [PROJECT_IMG_URL_1, PROJECT_IMG_URL_1, HERO_IMG_URL],
     title: "Project 2",
     description:
       "Project 2 Desc: lfnesnjs enesk njfkesjnkj nfkjesnkjns ekj nfnsejk fnskjn nesjkn eskjn jknesjk",
     labelKeys: projectKeys,
   },
   {
-    imgUrl: PROJECT_IMG_URL_1,
+    imgUrls: [PROJECT_IMG_URL_1, PROJECT_IMG_URL_1, HERO_IMG_URL],
     title: "Project 3",
     description:
       "Project 3 Desc: lfnesnjs enesk njfkesjnkj nfkjesnkjns ekj nfnsejk fnskjn nesjkn eskjn jknesjk",
     labelKeys: projectKeys,
   },
   {
-    imgUrl: PROJECT_IMG_URL_1,
+    imgUrls: [PROJECT_IMG_URL_1, PROJECT_IMG_URL_1, HERO_IMG_URL],
     title: "Project 4",
     description:
       "Project 4 Desc: lfnesnjs enesk njfkesjnkj nfkjesnkjns ekj nfnsejk fnskjn nesjkn eskjn jknesjk",
     labelKeys: projectKeys,
   },
   {
-    imgUrl: PROJECT_IMG_URL_1,
+    imgUrls: [PROJECT_IMG_URL_1, PROJECT_IMG_URL_1, HERO_IMG_URL],
     title: "Project 5",
     description:
       "Project 5 Desc: lfnesnjs enesk njfkesjnkj nfkjesnkjns ekj nfnsejk fnskjn nesjkn eskjn jknesjk",
     labelKeys: projectKeys,
   },
   {
-    imgUrl: PROJECT_IMG_URL_1,
+    imgUrls: [PROJECT_IMG_URL_1, PROJECT_IMG_URL_1, HERO_IMG_URL],
     title: "Project 6",
     description:
       "Project 6 Desc: lfnesnjs enesk njfkesjnkj nfkjesnkjns ekj nfnsejk fnskjn nesjkn eskjn jknesjk",
     labelKeys: projectKeys,
   },
   {
-    imgUrl: PROJECT_IMG_URL_1,
+    imgUrls: [PROJECT_IMG_URL_1, PROJECT_IMG_URL_1, HERO_IMG_URL],
     title: "Project 7",
     description:
       "Project 7 Desc: lfnesnjs enesk njfkesjnkj nfkjesnkjns ekj nfnsejk fnskjn nesjkn eskjn jknesjk",
     labelKeys: projectKeys,
   },
   {
-    imgUrl: PROJECT_IMG_URL_1,
+    imgUrls: [PROJECT_IMG_URL_1, PROJECT_IMG_URL_1, HERO_IMG_URL],
     title: "Project 8",
     description:
       "Project 8 Desc: lfnesnjs enesk njfkesjnkj nfkjesnkjns ekj nfnsejk fnskjn nesjkn eskjn jknesjk",
     labelKeys: projectKeys,
   },
   {
-    imgUrl: PROJECT_IMG_URL_1,
+    imgUrls: [PROJECT_IMG_URL_1, PROJECT_IMG_URL_1, HERO_IMG_URL],
     title: "Project 9",
     description:
       "Project 9 Desc: lfnesnjs enesk njfkesjnkj nfkjesnkjns ekj nfnsejk fnskjn nesjkn eskjn jknesjk",

@@ -7,14 +7,14 @@ import { Techniques } from "constants/Constants";
 import { getTechniquesLabel } from "utils";
 
 export interface IProjectProps {
-  imgUrl: string;
+  imgUrls: string[];
   title: string;
   description: string;
   labelKeys: Techniques[];
 }
 
 const Project: FC<IProjectProps> = ({
-  imgUrl,
+  imgUrls,
   title,
   description,
   labelKeys,
@@ -22,7 +22,7 @@ const Project: FC<IProjectProps> = ({
   console.log("labelKeys", labelKeys);
   return (
     <Container>
-      <MainImage src={imgUrl} />
+      <MainImage src={imgUrls[0]} />
       <Title>{title}</Title>
       <Description>{description}</Description>
       <LabelsWrapper>
