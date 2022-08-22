@@ -41,13 +41,11 @@ const ContainerBox = styled(Box)(({ theme }) => ({
 const ContentBox = styled(Box)(({ theme }) => ({
   flex: 1,
   height: "100%",
-  border: "1px solid red",
 }));
 
 const ContactFormBox = styled(Box)(({ theme }) => ({
   flex: 2,
   height: "100%",
-  border: "1px solid red",
 }));
 
 const TitleBox = styled(Box)(({ theme }) => ({}));
