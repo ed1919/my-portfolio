@@ -38,6 +38,12 @@ export const HERO_IMG_URL =
 export const PROJECT_IMG_URL_1 =
   "https://cdn5.vectorstock.com/i/1000x1000/73/49/404-error-page-not-found-miss-paper-with-white-vector-20577349.jpg";
 
+export const MOCK_MEDIUM_TEXT =
+  "I am a Text I am a Text I am a Text I am a Text I am a Text I am a Text I am a Text I am a Text";
+
+export const MOCK_LONG_TEXT =
+  "I am a Text I am a Text I am a Text I am a Text I am a Text I am a Text I am a Text I am a Text I am a Text I am a Text I am a Text I am a Text I am a Text I am a Text I am a Text I am a Text ";
+
 export const projectKeys = Object.keys(projectLabels) as Techniques[];
 
 export const projects: IProjectProps[] = [
