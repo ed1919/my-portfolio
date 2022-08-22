@@ -2,6 +2,13 @@ import { ITechniquesLabelProps } from "components/techniquesLabel/TechniquesLabe
 import { IProjectProps } from "components/project/Project";
 import THEME from "theme";
 
+export enum HomeSections {
+  ABOUT = "about",
+  INTRODUCTION = "Introduction",
+  PROJECTS = "projects",
+  CONTACT = "contact",
+}
+
 export enum Techniques {
   JAVASCRIPT = "JavaScript",
   TYPESCRIPT = "TypeScript",

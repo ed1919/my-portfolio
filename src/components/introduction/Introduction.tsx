@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Box, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { HERO_IMG_URL } from "constants/Constants";
+import { HERO_IMG_URL, HomeSections } from "constants/Constants";
 
 import HomeSection from "components/_shared/homeSection";
 
@@ -9,7 +9,7 @@ interface IIntroductionProps {}
 
 const Introduction: FC<IIntroductionProps> = ({}) => {
   return (
-    <HomeSection>
+    <HomeSection id={HomeSections.INTRODUCTION}>
       <Container>
         <Content>
           <Header variant="h3">I am Header</Header>

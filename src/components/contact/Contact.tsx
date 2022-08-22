@@ -4,12 +4,13 @@ import { styled } from "@mui/material/styles";
 import HomeSection from "components/_shared/homeSection";
 import { MOCK_MEDIUM_TEXT, MOCK_LONG_TEXT } from "constants/Constants";
 import ContactForm from "./contactForm";
+import { HomeSections } from "constants/Constants";
 
 interface IContactProps {}
 
 const Contact: FC<IContactProps> = () => {
   return (
-    <HomeSection>
+    <HomeSection id={HomeSections.PROJECTS}>
       <ContainerBox>
         <ContentBox>
           <TitleBox>Title</TitleBox>

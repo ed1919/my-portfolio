@@ -5,11 +5,13 @@ import { HERO_IMG_URL } from "constants/Constants";
 
 import HomeSection from "components/_shared/homeSection";
 
+import { HomeSections } from "constants/Constants";
+
 interface IAboutProps {}
 
 const About: FC<IAboutProps> = ({}) => {
   return (
-    <HomeSection>
+    <HomeSection id={HomeSections.ABOUT}>
       <Container>
         <HeroImgWrapper>
           <HeroImg src={HERO_IMG_URL} />

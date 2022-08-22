@@ -9,6 +9,8 @@ import { IProjectProps } from "components/project/Project";
 import HomeSection from "components/_shared/homeSection";
 import ProjectModal from "components/projectModal";
 
+import { HomeSections } from "constants/Constants";
+
 interface IProjectsProps {}
 
 const Projects: FC<IProjectsProps> = ({}) => {
@@ -24,7 +26,7 @@ const Projects: FC<IProjectsProps> = ({}) => {
   };
 
   return (
-    <HomeSection>
+    <HomeSection id={HomeSections.PROJECTS}>
       <Container>
         <Header variant="h3">Header 3</Header>
         <ProjectsWrapper>
