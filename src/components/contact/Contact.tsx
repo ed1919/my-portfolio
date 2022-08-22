@@ -34,8 +34,6 @@ const ContainerBox = styled(Box)(({ theme }) => ({
   padding: theme.spacing(2),
   paddingLeft: "5%",
   paddingRight: "5%",
-
-  border: "1px solid blue",
 }));
 
 const ContentBox = styled(Box)(({ theme }) => ({
