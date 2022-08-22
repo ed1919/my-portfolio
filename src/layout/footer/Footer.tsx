@@ -34,6 +34,8 @@ const buttons: IButtonProps[] = [
 ];
 
 const Footer: FC<IFooterProps> = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <HomeSection>
       <ContainerBox>
@@ -50,7 +52,7 @@ const Footer: FC<IFooterProps> = () => {
             ))}
         </ButtonsWrapperBox>
         <Divider />
-        <CopyRightBox>Copyright © 2022 I am a User.</CopyRightBox>
+        <CopyRightBox>Copyright © {currentYear} I am a User.</CopyRightBox>
       </ContainerBox>
     </HomeSection>
   );
