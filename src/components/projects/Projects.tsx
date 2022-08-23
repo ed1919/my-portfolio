@@ -8,6 +8,7 @@ import Project from "components/project";
 import { IProjectProps } from "components/project/Project";
 import HomeSection from "components/_shared/homeSection";
 import ProjectModal from "components/projectModal";
+import Grid from "@mui/material/Grid";
 
 import { HomeSections } from "constants/Constants";
 
@@ -29,16 +30,20 @@ const Projects: FC<IProjectsProps> = ({}) => {
     <HomeSection id={HomeSections.PROJECTS}>
       <Container>
         <Header variant="h3">Header 3</Header>
-        <ProjectsWrapper>
-          {projects.map((item) => (
-            <ProjectWrapperBox
-              key={item.title}
-              onClick={() => handleClickProject(item)}
+        <Grid container spacing={1}>
+          {projects.map((project) => (
+            <Grid
+              item
+              key={project.title}
+              onClick={() => handleClickProject(project)}
+              xs={6}
+              sm={4}
+              md={3}
             >
-              <Project {...item} />
-            </ProjectWrapperBox>
+              <Project {...project} />
+            </Grid>
           ))}
-        </ProjectsWrapper>
+        </Grid>
         {openedProject && (
           <ProjectModal project={openedProject} modalRef={modalRef} />
         )}
@@ -59,14 +64,3 @@ const Container = styled(Box)(({ theme }) => ({
 const Header = styled(Typography)(({ theme }) => ({
   paddingBottom: theme.spacing(2),
 }));
-
-const ProjectsWrapper = styled(Box)(({ theme }) => ({
-  display: "flex",
-  flexWrap: "wrap",
-  flexDirection: "row",
-  gap: theme.spacing(1),
-}));
-
-const ProjectWrapperBox = styled(Box)`
-  width: 24%;
-`;
